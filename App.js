@@ -1,6 +1,6 @@
 /*
 YouTube Tutorial Link: https://www.youtube.com/watch?v=qSRrxpdMpVc
-Watched until 3:02:33
+Watched until 3:20:30
 */
 
 import React, {useState} from 'react';
@@ -14,6 +14,10 @@ export default function App() {
   const [isAddMode, setIsAddMode] = useState(false);
 
   const addGoalHandler = goalTitle => {
+    if (goalTitle.length === 0) {
+      alert('Please Enter Something...');
+      return;
+    }
     setCourseGoals(currentGoals => [
       ...currentGoals,
       {id: Math.random().toString(), value: goalTitle},
